@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<title>Document</title>
+
+		<link rel="stylesheet" href="/assets/css/main.min.css">
+		<link rel="stylesheet" href="/assets/css/golos.woff2.css">
+
+		{# https://gist.github.com/meritt/994620bc31264e4f3b21 #}
+		{# <script>
+			function loadCss(t,e,n){var a=navigator.userAgent;if(!(!window.addEventListener||a.match(/(Android (2|3|4.0|4.1|4.2|4.3))|(Opera (Mini|Mobi))/)&&!a.match(/Chrome/))){var o={};try{o=localStorage||{}}catch(t){}var r="x-font-"+t,i=r+"url",s=r+"css",d=o[i],c=o[s],l=document.createElement("style");if(l.rel="stylesheet",document.head.appendChild(l),!c||d!==e&&d!==n){var u=n&&function(){if(!window.FontFace)return!1;var t=new FontFace("t",'url("data:application/font-woff2,") format("woff2")',{});return t.load(),"loading"===t.status}()?n:e,f=new XMLHttpRequest;f.open("GET",u),f.onload=function(){f.status>=200&&f.status<400&&(o[i]=u,o[s]=l.textContent=f.responseText)},f.send()}else l.textContent=c}}
+			loadCss('font', 'assets/css/golos.woff.css?v=1.0', 'assets/css/golos.woff2.css?v=1.0');
+			loadCss('main', 'assets/css/main.min.css?v=1.0');
+		</script> #}
+
+		{# https://favicon.io/ #}
+		<link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+		<link rel="manifest" href="/favicons/site.webmanifest">
+		
+		{# Chrome, Firefox OS and Opera #}
+		<meta name="theme-color" content="#ff55aa">
+		{# Windows Phone #}
+		<meta name="msapplication-navbutton-color" content="#ff55aa">
+		{# iOS Safari #}
+		<meta name="apple-mobile-web-app-status-bar-style" content="#ff55aa">
+
+	</head>
+	<body>
+		{% block page %}{% endblock %}
+		<script src="/assets/js/main.min.js"></script>
+	</body>
+</html>

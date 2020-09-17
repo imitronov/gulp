@@ -1,0 +1,77 @@
+@import "../../node_modules/sanitize.css/sanitize"
+@import "reset"
+
+$links: #0080ff
+
+*:root
+    --links: #{$links}
+    --border: #dddddd
+    --primary: #3f51b5
+    --secondary: #03A9F4
+    --border-radius: 4px
+    --default: #f0f0f0
+
+p>label:first-child
+    display: block
+
+ol
+    counter-reset: list
+    &:not([class])
+        li
+            &:before
+                content: counter(list,decimal-leading-zero) "."
+                counter-increment: list
+                margin-right: .5rem
+                color: var(--links)
+
+ul
+    &:not([class])
+        li
+            &:before
+                content: "→"
+                margin-right: .5rem
+                color: var(--links)
+
+dl
+    dt
+        font-weight: 500
+    dd
+        margin: 0 0 .5rem
+
+a
+    text-decoration: none
+    display: inline
+    color: var(--links)
+    background: linear-gradient(180deg, transparent 65%, rgba($links, .1) 0)
+    &:hover
+        background: linear-gradient(180deg, transparent 65%, rgba($links, .2) 0)
+
+input:not([type="checkbox"]):not([type="radio"]),select,button,textarea
+    border: 1px solid var(--border)
+    transition: all .25s ease
+    outline: 0 !important
+    border-radius: var(--border-radius)
+    &:focus
+        border-color: var(--links)
+        transition: all .25s ease
+
+.outline
+    background: #ffffff
+
+.primary
+    background: var(--primary)
+    color: #fff
+    border-color: var(--primary)
+    &.outline
+        background: #ffffff
+        color: var(--primary)
+
+.secondary
+    background: var(--secondary)
+    color: #fff
+    border-color: var(--secondary)
+    &.outline
+        background: #ffffff
+        color: var(--secondary)
+
+@import "media"
