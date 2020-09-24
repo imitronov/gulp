@@ -50,7 +50,8 @@ const js = () => {
           {
             test: /\.(ts|js)$/,
             loader: [
-              'babel-loader'
+              'babel-loader',
+              'ts-loader'
             ],
             exclude: /node_modules/
           }

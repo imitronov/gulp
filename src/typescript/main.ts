@@ -1,1 +1,11 @@
-console.log('Hello from typescript');
+interface User {
+    name: string;
+    id: number;
+}
+
+const user = {
+    name: "Hayes",
+    id: 0,
+};
+
+console.log(user)
