@@ -1,8 +1,7 @@
 const { src, dest, watch, series, parallel } = require('gulp');
 const rename = require('gulp-rename');
 
-const sass = require('gulp-sass');
-sass.compiler = require('node-sass');
+const sass = require('gulp-sass')(require('node-sass'));
 const autoprefixer = require('gulp-autoprefixer');
 const csso = require('gulp-csso');
 
@@ -82,7 +81,7 @@ const twig = () => {
  * Watchers
  */
 const cssWatch = () => watch('./src/sass/**/*.sass', css);
-const jsWatch = () => watch('./src/typescript/**/*.ts', js);
+const jsWatch = () => watch(['./src/typescript/**/*.ts', './src/typescript/**/*.js'], js);
 const twigWatch = () => watch('./src/twig/**/*.twig', twig);
 
 /**
